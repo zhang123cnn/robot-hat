@@ -19,7 +19,7 @@
 import sphinx_rtd_theme
 
 project = 'SunFounder Robot HAT'
-copyright = '2021, SunFounder'
+copyright = '2023, SunFounder'
 author = 'www.sunfounder.com'
 
 
