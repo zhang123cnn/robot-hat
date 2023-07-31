@@ -9,9 +9,10 @@ Accepts 7-12V PH2.0 2pin power input with 2 power indicators. The board also has
 
 In this document, you will get a full understanding of the interface functions of the Robot HAT and the usage of these interfaces through the Python ``robot-hat`` library provided by SunFounder.
 
-.. image:: img/robot_hat.jpg
-   :width: 400
-   :align: center
+.. .. image:: img/robot_hat.jpg
+..    :width: 400
+..    :align: center
+.. wait for new pic
 
 .. toctree::
    :maxdepth: 3
@@ -19,3 +20,4 @@ In this document, you will get a full understanding of the interface functions o
    hardware_introduction
    installation
    api
+   faq
