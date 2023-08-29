@@ -1,55 +1,53 @@
 .. _class_pwm:
 
-class ``PWM`` - pulse width modulation
-======================================
+Klasse ``PWM`` - Pulsweitenmodulation
+=======================================
 
-**Usage**
+**Verwendung**
 
 .. code-block:: python
 
     from robot_hat import PWM
 
-    pwm = PWM('P0')                                 # create a PWM object from a pin
-    PWM.freq(*freq)                                 #Frequency (0-65535, unit Hz)
-    PWM.prescaler(*prescaler)                       #Prescaler
+    pwm = PWM('P0')                              # Erzeugt ein PWM-Objekt von einem Pin
+    PWM.freq(*freq)                              # Frequenz (0-65535, Einheit Hz)
+    PWM.prescaler(*prescaler)                    # Vorteiler
     PWM.period(*arr)  
-    PWM.pulse_width(*pulse_width)                   # Pulse width (pulse_width < period)
-    PWM.pulse_width_percent(*pulse_width_percent)   # Duty cycle (0-100)
+    PWM.pulse_width(*pulse_width)                # Pulsbreite (pulse_width < period)
+    PWM.pulse_width_percent(*pulse_width_percent)# Tastverhältnis (0-100)
 
-**Constructors**
+**Konstruktoren**
 
-``class robot_hat.PWM(channel)``: Create a PWM object associated with the given pin. This allows you set up the pwm function on that pin.
+``class robot_hat.PWM(channel)``: Erstellt ein PWM-Objekt, das mit dem angegebenen Pin verknüpft ist. Dies ermöglicht Ihnen, die PWM-Funktion an diesem Pin einzurichten.
 
-**Methods**
+**Methoden**
 
--  ``freq`` - Set the frequency of the pwm channel.
+-  ``freq`` - Legt die Frequenz des PWM-Kanals fest.
 
 .. code-block:: python
 
     PWM.freq(50)
 
--  ``prescaler`` - Set the prescaler for the pwm channel.
+-  ``prescaler`` - Legt den Vorteiler für den PWM-Kanal fest.
 
 .. code-block:: python
 
     PWM.prescaler(50)
 
--  ``period`` - Set the period of the pwm channel.
+-  ``period`` - Legt die Periode des PWM-Kanals fest.
 
 .. code-block:: python
 
     PWM.period(100)
 
--  ``pulse_width`` - Set the pulse width of the pwm channel.
+-  ``pulse_width`` - Legt die Pulsbreite des PWM-Kanals fest.
 
 .. code-block:: python
 
     PWM.pulse_width(10)
 
--  ``pulse_width_percent`` - Sets the pulse width percentage of the pwm channel.
+-  ``pulse_width_percent`` - Legt die Pulsbreitenprozentsatz des PWM-Kanals fest.
 
 .. code-block:: python
 
     PWM.pulse_width_percent(50)
-
-

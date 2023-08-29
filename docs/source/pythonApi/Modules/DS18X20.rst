@@ -1,47 +1,43 @@
-class ``DS18X20`` - ds18x20 series temperature sensor
-=====================================================
+Klasse ``DS18X20`` - Temperatursensor der DS18X20-Serie
+=======================================================
 
-**Usage**
+**Verwendung**
 
 .. code-block:: python
 
     from robot_hat import Pin, DS18X20
 
-    pin = Pin("D0")             # create pin object
-    ds = DS18X20(pin)           # create a DS18X20 object
+    pin = Pin("D0")                    # Pin-Objekt erstellen
+    ds = DS18X20(pin)                  # DS18X20-Objekt erstellen
 
-    ds.read(ds.C)               # read temperature in celsius(1)
-    ds.read(0)                  # read temperature in Fahrenheit(0)
+    ds.read(ds.C)                      # Temperatur in Celsius lesen
+    ds.read(0)                         # Temperatur in Fahrenheit lesen
 
-**Constructors**
+**Konstruktoren**
 
+``class robot_hat.DS18X20(pin)``: Erstellt ein DS18X20-Objekt, das mit dem gegebenen Pin-Objekt verknüpft ist. Dies ermöglicht das Auslesen der Temperatur vom DS18X20.
 
-``class robot_hat.DS18X20(pin)``: Create a DS18X20 object associated with the given pin object. This allows you to read temperature from DS18X20.
+**Methoden**
 
-**Methods**
-
-
--  ``DS18X20.read`` - Read temperature with the giving unit. It returns a ``float`` value if only one ds18x20 is connected to the pin, or it will return a list of all sensor values.
+-  ``DS18X20.read`` - Liest die Temperatur in der angegebenen Einheit. Gibt einen ``float`` Wert zurück, falls nur ein DS18X20 am Pin angeschlossen ist, oder eine Liste aller Sensorwerte.
 
 .. code-block:: python
 
     DS18X20.read(unit)
 
--  ``DS18X20.scan`` - Scan the connected DS18X20 and return the roms address list.
+-  ``DS18X20.scan`` - Scannt die angeschlossenen DS18X20 und gibt die Liste der ROM-Adressen zurück.
 
 .. code-block:: python
 
     DS18X20.scan()
 
--  ``DS18X20.read_temp`` - Read temperature(s) with the giving rom(s).
+-  ``DS18X20.read_temp`` - Liest die Temperatur(en) mit den angegebenen ROM(s).
 
 .. code-block:: python
 
     DS18X20.read_temp(rom)
 
-**Constants**
-
+**Konstanten**
 
 -  ``DS18X20.C`` - Celsius
 -  ``DS18X20.F`` - Fahrenheit
-

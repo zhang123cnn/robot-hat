@@ -1,27 +1,24 @@
-class ``Servo`` - 3-wire pwm servo driver
-=========================================
+Klasse ``Servo`` - 3-Draht-PWM-Servotreiber
+==============================================
 
-**Usage**
+**Verwendung**
 
 .. code-block:: python
 
     from robot_hat import Servo, PWM
 
     pin = PWM("P0")
-    ser = Servo(pin)                      # create a Servo object
-    val = ser.angle(60)                   # set the servo angle
+    ser = Servo(pin)                      # Ein Servo-Objekt erzeugen
+    val = ser.angle(60)                   # Servowinkel einstellen
 
-**Constructors**
+**Konstruktoren**
 
-``class robot_hat.Servo(pin)``: Create a Servo object associated with the given pin. This allows you to set the angle values.
+``class robot_hat.Servo(pin)``: Erzeugt ein Servo-Objekt, das mit dem angegebenen Pin assoziiert ist. Dadurch können Winkelwerte eingestellt werden.
 
-Methods
--------
+**Methoden**
 
--  ``angle`` - set the angle values between -90 and 90.
+-  ``angle`` - Stellt die Winkelwerte zwischen -90 und 90 ein.
 
 .. code-block:: python
 
     Servo.angle(90)
-
-

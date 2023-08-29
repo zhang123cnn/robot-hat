@@ -1,7 +1,7 @@
-class ``Ultrasonic`` - ultrasonic ranging sensor
-================================================
+Klasse ``Ultrasonic`` - Ultraschall-Entfernungssensor
+======================================================
 
-**Usage**
+**Verwendung**
 
 .. code-block:: python
 
@@ -10,20 +10,21 @@ class ``Ultrasonic`` - ultrasonic ranging sensor
     trig = Pin("D0")
     echo = Pin("D1")
 
-    ultrasonic = Ultrasonic(trig, echo)             # create an Ultrasonic object
-    val = ultrasonic.read()                         # read an analog value
+    ultrasonic = Ultrasonic(trig, echo)              # Erstellen eines Ultrasonic-Objekts
+    val = ultrasonic.read()                          # Ein Analogwert auslesen
 
-**Constructors**
+**Konstruktoren**
 
-``class robot_hat.Ultrasonic(trig, echo)``: Create a Ultrasonic object associated with the given pin. This allows you to then read distance value.
+``class robot_hat.Ultrasonic(trig, echo)``: Erstellt ein Ultrasonic-Objekt, das mit den angegebenen Pins verknüpft ist. Dadurch ist es möglich, Entfernungsdaten auszulesen.
 
-Methods
--------
+**Methoden**
 
--  ``read`` - Read distance values.
+-  ``read`` - Entfernungsdaten auslesen.
 
-   .. code-block:: python
+    .. code-block:: python
 
-       Ultrasonic.read(trig, echo)
+        Ultrasonic.read(trig, echo)
+
+
 
 

@@ -1,17 +1,17 @@
-class ``Music`` - notes and beats
-=================================
+Klasse ``Music`` - Noten und Schläge
+========================================
 
-**Usage**
+**Verwendung**
 
 .. code-block:: python
 
     from robot_hat import Music, Buzzer
 
-    m = Music()        # create a music object
+    m = Music()           # Ein Musik-Objekt erstellen
     buzzer = Buzzer("P0")
-    m.tempo(120)          # set current tempo to 120 beat per minute
+    m.tempo(120)          # Aktuelles Tempo auf 120 Schläge pro Minute setzen
 
-    # play middle C, D, E, F ,G, A, B every 1 beat.
+    # Spiele Mittel-C, D, E, F, G, A, B jeweils einen Schlag lang.
     buzzer.play(m.note("Middle C"), m.beat(1))
     buzzer.play(m.note("Middle D"), m.beat(1))
     buzzer.play(m.note("Middle E"), m.beat(1))
@@ -23,82 +23,81 @@ class ``Music`` - notes and beats
     song = './music/test.wav'
     
     m.music_set_volume(80)
-    print('Music duration',m.sound_length(file_name))
+    print('Musikdauer', m.sound_length(file_name))
     m.sound_play(song)
 
-**Constructors**
+**Konstruktoren**
 
-``class robot_hat.Music()``: Create a Music object. This allows you to then get or control music!
+``class robot_hat.Music()``: Erstellt ein Music-Objekt, das die Steuerung oder Abfrage von Musik ermöglicht.
 
-**Methods**
+**Methoden**
 
--  ``note`` - Gets the frequency of the note. The input string must be the constant ``NOTE``.
+-  ``note`` - Ermittelt die Frequenz der Note. Der Eingabestring muss die Konstante ``NOTE`` sein.
 
 .. code-block:: python
 
     Music.note("Middle D")
     Music.note("High A#")
 
--  ``beat`` - Get milisecond from beats. Input value can be float, like ``0.5`` as half beat, or ``0.25`` as quarter beat.
+-  ``beat`` - Wandelt Schläge in Millisekunden um. Der Eingabewert kann ein Float sein, wie ``0.5`` für einen halben Schlag oder ``0.25`` für einen Viertelschlag.
 
 .. code-block:: python
 
     Music.beat(0.5)
     Music.beat(0.125)
 
--  ``tempo`` - Get/set the tempo, input value is in bmp(beat per second).
+-  ``tempo`` - Abfrage oder Festlegung des Tempos, der Eingabewert ist in bpm (Schläge pro Minute).
 
 .. code-block:: python
 
     Music.tempo()
     Music.tempo(120)
 
--  ``play_tone_for`` - Play tone. Input is note and beat, like ``Music.note("Middle D"), Music.beat(0.5)``.
+-  ``play_tone_for`` - Spielt einen Ton. Die Eingabe sind Note und Schlag, wie ``Music.note("Middle D"), Music.beat(0.5)``.
 
 .. code-block:: python
 
     Music.play_tone_for(Music.note("Middle D"), Music.beat(0.5))
 
--  ``sound_play`` - Play music files.
+-  ``sound_play`` - Spielt Musikdateien ab.
 
 .. code-block:: python
     
     sound_play(file_name)
 
--  ``background_music`` - Background music playback (file name, number of loops, starting position of music file, volume).
+-  ``background_music`` - Hintergrundmusik-Wiedergabe (Dateiname, Anzahl der Schleifen, Startposition der Musikdatei, Lautstärke).
 
 .. code-block:: python
 
     background_music(file_name, loops=-1, start=0.0, volume=50)
 
--  ``music_set_volume`` - Set volume
+-  ``music_set_volume`` - Lautstärke einstellen
     
 .. code-block:: python
 
     music_set_volume(value=50)
 
--  ``music_stop`` - stop
+-  ``music_stop`` - stoppen
     
 .. code-block:: python
 
     music_stop()
 
--  ``music_pause`` - pause
+-  ``music_pause`` - pausieren
     
 .. code-block:: python
 
     music_pause()
 
--  ``music_unpause`` - unpause
+-  ``music_unpause`` - fortsetzen
     
 .. code-block:: python
 
     music_unpause()
 
--  ``sound_length`` - Return the duration of the music file.
+-  ``sound_length`` - Gibt die Dauer der Musikdatei zurück.
     
 .. code-block:: python
 
     len = sound_length(file_name)
-
 

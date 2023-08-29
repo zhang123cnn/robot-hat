@@ -1,7 +1,7 @@
-class ``RGB_LED`` - rgb LED
-===========================
+Klasse ``RGB_LED`` - rgb LED
+==============================
 
-**Usage**
+**Verwendung**
 
 .. code-block:: python
 
@@ -11,22 +11,22 @@ class ``RGB_LED`` - rgb LED
     g = PWM("P1")
     b = PWM("P2")
 
-    rgb = RGB_LED(r, g, b)                       # Create a RGB_LED object
-    val = rgb.write('#FFFFFF')                   # Write in the color in hexadecimal.
+    rgb = RGB_LED(r, g, b)                    # RGB_LED-Objekt erstellen
+    val = rgb.write('#FFFFFF')                # Farbe in hexadezimaler Darstellung setzen.
 
-Constructors
-------------
+**Konstruktoren**
 
-``class robot_hat.RGB_LED(Rpin, Gpin, Bpin)``: Create a ``RGB_LED`` object associated with the given pin. This allows you set the color of RGB LED. 
-Input ``Rpin``, ``Gpin``, ``Bpin`` must be ``PWM`` object from ``robot_hat.PWM``.
+``class robot_hat.RGB_LED(Rpin, Gpin, Bpin)``: Erstellt ein ``RGB_LED`` -Objekt, das mit den gegebenen Pins verknüpft ist. Dadurch können Sie die Farbe der RGB-LED einstellen. 
+Die Eingabepins ``Rpin``, ``Gpin``, ``Bpin`` müssen ``PWM`` -Objekte aus ``robot_hat.PWM`` sein.
 
-**Methods**
+**Methoden**
 
-
--  ``write`` - Writing a specific color to the RGB LED, the color value is represented by hexadecimal for red, green and blue (RGB). Each color has a minimum value of 0 (00 in hexadecimal) and a maximum value of 255 (FF in hexadecimal). Hexadecimal values are written with a # sign followed by three or six hexadecimal characters.
+-  ``write`` - Setzt eine spezifische Farbe für die RGB-LED. Der Farbwert wird in Hexadezimalzahlen für Rot, Grün und Blau (RGB) angegeben. Jede Farbe hat einen Minimalwert von 0 (00 in Hexadezimal) und einen Maximalwert von 255 (FF in Hexadezimal). Hexadezimale Werte werden mit einem # gefolgt von drei oder sechs Hexadezimalzeichen geschrieben.
 
 .. code-block:: python
 
     RGB_LED.write(color)
+
+
 
 

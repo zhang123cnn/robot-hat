@@ -1,18 +1,19 @@
 SunFounder Robot HAT
 =====================================
 
-Robot HAT is a multifunctional expansion board that allows Raspberry Pi to be quickly turned into a robot. An MCU is on board to extend the PWM output and ADC input for the Raspberry Pi, as well as a motor driver chip, Bluetooth module, I2S audio module and mono speaker. As well as the GPIOs that lead out of the Raspberry Pi itself.
+Der Robot HAT ist eine multifunktionale Erweiterungsplatine, die es ermöglicht, einen Raspberry Pi schnell in einen Roboter zu verwandeln. Ein MCU ist auf der Platine integriert, um die PWM-Ausgabe und ADC-Eingänge des Raspberry Pi zu erweitern. Zudem sind ein Motortreiber-Chip, ein Bluetooth-Modul, ein I2S-Audiomodul und ein Monolautsprecher vorhanden. Hinzu kommen die vom Raspberry Pi selbst ausgeführten GPIOs.
 
-It also comes with a Speaker, which can be used to play background music, sound effects and implement TTS functions to make your project more interesting.
+Zusätzlich ist ein Lautsprecher im Lieferumfang enthalten, der zur Wiedergabe von Hintergrundmusik, Soundeffekten und zur Implementierung von TTS-Funktionen verwendet werden kann, um Ihr Projekt interessanter zu gestalten.
 
-Accepts 7-12V PH2.0 2pin power input with 2 power indicators. The board also has a user available LED and a button for you to quickly test some effects.
+Das Board akzeptiert eine 7-12V PH2.0 2-Pin-Stromversorgung und verfügt über zwei Stromanzeigen. Darüber hinaus gibt es eine nutzerzugängliche LED und einen Button, um schnell einige Effekte zu testen.
 
-In this document, you will get a full understanding of the interface functions of the Robot HAT and the usage of these interfaces through the Python ``robot-hat`` library provided by SunFounder.
+In diesem Dokument erhalten Sie ein umfassendes Verständnis der Schnittstellenfunktionen des Robot HAT sowie der Verwendung dieser Schnittstellen durch die von SunFounder bereitgestellte Python-Bibliothek „robot-hat“.
 
 .. .. image:: img/robot_hat.jpg
 ..    :width: 400
 ..    :align: center
-.. wait for new pic
+.. auf neues Bild warten
+
 
 .. toctree::
    :maxdepth: 3

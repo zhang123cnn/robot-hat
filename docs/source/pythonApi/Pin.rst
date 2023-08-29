@@ -1,63 +1,62 @@
 .. _class_pin:
 
+Klasse ``Pin`` - Steuerung von I/O-Pins
+===========================================
 
-class ``Pin`` - control I/O pins
-================================
-
-**Usage**
+**Verwendung**
 
 .. code-block:: python
 
     from robot_hat import Pin
 
-    pin = Pin("D0")                      # create a Pin object from a digital pin
-    val = pin.value()                    # read the value on the digital pin
+    pin = Pin("D0")                     # Erzeugt ein Pin-Objekt von einem digitalen Pin
+    val = pin.value()                   # Liest den Wert am digitalen Pin aus
 
-    pin.value(0)                         # set the digital pin to low level
+    pin.value(0)                        # Setzt den digitalen Pin auf Low-Pegel
 
-**Constructors**
+**Konstruktoren**
 
-``class robot_hat.Pin(value)`` : The ``Pin()`` is the basic object to control I/O pins. It has methods to set the pin mode (input, output, etc.) and methods to get or set the level of a digital pin.
+``class robot_hat.Pin(value)`` : ``Pin()`` ist das Basisobjekt zur Steuerung der I/O-Pins. Es bietet Methoden zur Einstellung des Pin-Modus (Eingang, Ausgang usw.) sowie zur Abfrage oder Festlegung des Pegels eines digitalen Pins.
 
+**Methoden**
 
-**Methods**
-
--  ``value`` - Read or set the value on the digital pin, the value is 0/1.
-
-.. code-block:: python
-
-    Pin.value() # Without parameters, read gpio level, high level returns 1, low level returns 0.
-
-    Pin.value(0)  # set to low level    
-    Pin.value(1)  # set to high level
-
--  Set the value to the digital pin, same as ``value``.
+-  ``value`` - Liest oder setzt den Wert am digitalen Pin; der Wert ist 0/1.
 
 .. code-block:: python
 
-    Pin.on() # set to high level
-    #off() # set to low level
-    #high() # set to high level
-    #low() # set to low level
+    Pin.value() # Ohne Parameter wird der GPIO-Pegel ausgelesen; hoher Pegel gibt 1 zurück, niedriger Pegel gibt 0 zurück.
 
--  ``mode`` - Set the mode of GPIO to ``IN`` or ``OUT``.
+    Pin.value(0)  # Setzt auf Low-Pegel    
+    Pin.value(1)  # Setzt auf High-Pegel
+
+-  Setzt den Wert am digitalen Pin, identisch mit ``value``.
+
+.. code-block:: python
+
+    Pin.on() # Setzt auf High-Pegel
+    #off() # Setzt auf Low-Pegel
+    #high() # Setzt auf High-Pegel
+    #low() # Setzt auf Low-Pegel
+
+-  ``mode`` - Setzt den Modus von GPIO auf ``IN`` oder ``OUT``.
 
 .. code-block:: python
     
-    Pin.mode(GPIO.IN)  # set gipo to INPUT mode
+    Pin.mode(GPIO.IN)  # Setzt GPIO auf den EINGANG-Modus
 
-**Availble Pins**
+**Verfügbare Pins**
 
--  ``"D0"``: The Digital pin 0.
--  ``"D1"``: The Digital pin 1.
--  ``"D2"``: The Digital pin 2.
--  ``"D3"``: The Digital pin 3.
--  ``"D4"``: The left motor pin.
--  ``"D5"``: The right motor pin.
+-  ``"D0"``: Digitaler Pin 0.
+-  ``"D1"``: Digitaler Pin 1.
+-  ``"D2"``: Digitaler Pin 2.
+-  ``"D3"``: Digitaler Pin 3.
+-  ``"D4"``: Pin für den linken Motor.
+-  ``"D5"``: Pin für den rechten Motor.
 -  ``"D6"``
 -  ``"D7"``
 -  ``"D8"``
 -  ``"D9"``
--  ``"SW"``: The USR button.
--  ``"LED"``: The LED on the board.
+-  ``"SW"``: Die USR-Taste.
+-  ``"LED"``: Die LED auf der Platine.
+
 

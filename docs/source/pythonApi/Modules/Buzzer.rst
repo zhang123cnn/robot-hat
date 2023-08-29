@@ -1,51 +1,48 @@
-class ``Buzzer`` - passive buzzer
-=================================
+Klasse ``Buzzer`` - passiver Summer
+=====================================
 
-**Usage**
+**Verwendung**
 
 .. code-block:: python
 
     from robot_hat import PWM, Buzzer, Music
 
-    pwm = PWM("A0")                 # create a pwm object
-    buzzer = Buzzer(pwm)            # create a Buzzer object with PWM object
-    music = Music()                 # create music object
+    pwm = PWM("A0")                          # Ein PWM-Objekt erzeugen
+    buzzer = Buzzer(pwm)                     # Ein Buzzer-Objekt mit PWM-Objekt erzeugen
+    music = Music()                          # Ein Musik-Objekt erzeugen
 
-    buzzer.play(music.note("Low C"), music.beat(1))   # play low C for 1 beat
-    buzzer.play(music.note("Middle C#"))              # play middle C sharp
-    buzzer.off()                                      # turn buzzer off
+    buzzer.play(music.note("Low C"), music.beat(1))  # Tiefe C-Ton für 1 Schlag spielen
+    buzzer.play(music.note("Middle C#"))             # Mittlere C# spielen
+    buzzer.off()                                     # Summer ausschalten
 
-**Constructors**
+**Konstruktoren**
 
+``class robot_hat.Buzzer(pwm)``: Ein Buzzer-Objekt erzeugen, das mit dem gegebenen PWM-Objekt assoziiert ist. Dies ermöglicht die Steuerung des Buzzers.
 
-``class robot_hat.Buzzer(pwm)``: Create a Buzzer object associated with the given pwm object. This will allow you to control the buzzer.
+**Methoden**
 
-**Methods**
-
-
--  ``on`` - Turn the buzzer on with a square wave.
+-  ``on`` - Schaltet den Buzzer mit einer Rechteckwelle ein.
 
 .. code-block:: python
 
     Buzzer.on()
 
--  ``off`` - Turn the buzzer off.
+-  ``off`` - Schaltet den Buzzer aus.
 
 .. code-block:: python
 
     Buzzer.off()
 
--  ``freq`` - Set the frequency of the square wave.
+-  ``freq`` - Legt die Frequenz der Rechteckwelle fest.
 
 .. code-block:: python
 
     Buzzer.freq(frequency)
 
--  ``play`` - Make the buzzer sound at a specific frequency and stop at a ms delay time.
+-  ``play`` - Lässt den Buzzer mit einer bestimmten Frequenz erklingen und stoppt nach einer bestimmten Verzögerungszeit in Millisekunden.
 
 .. code-block:: python
 
     Buzzer.play(freq, ms)
     Buzzer.play(freq)
-
 

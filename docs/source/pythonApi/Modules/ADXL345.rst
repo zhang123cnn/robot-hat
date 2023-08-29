@@ -1,36 +1,34 @@
-class ``ADXL345`` - accelemeter
-===============================
+Klasse ``ADXL345`` - Beschleunigungsmesser
+=============================================
 
-**Usage**
+**Verwendung**
 
 .. code-block:: python
 
     from robot_hat import ADXL345
 
-    accel = ADXL345()                     # create an ADXL345 object
-    x_val = accel.read(accel.X)           # read an X(0) value
-    y_val = accel.read(1)                 # read an Y(1) value
-    z_val = accel.read(2)                 # read a Z(2) value
+    accel = ADXL345()                        # Ein ADXL345-Objekt erzeugen
+    x_val = accel.read(accel.X)              # Einen X-Wert auslesen
+    y_val = accel.read(1)                    # Einen Y-Wert auslesen
+    z_val = accel.read(2)                    # Einen Z-Wert auslesen
 
-**Constructors**
+**Konstruktoren**
 
+``class robot_hat.ADXL345(address=0x53)``: Ein ADXL345-Objekt erzeugen. Damit können anschließend Beschleunigungswerte ausgelesen werden.
 
-``class robot_hat.ADXL345(address=0x53)``: Create an ADXL345 object. This
-allows you to then read adxl345 accelerator values.
+**Methoden**
 
-**Methods**
-
-
--  ``read`` - Read the value with the axis and return it. The unit is gravity acceleration(about 9.8m/s2).
+-  ``read`` - Liest den Wert der jeweiligen Achse und gibt ihn zurück. Die Einheit ist die Erdbeschleunigung (etwa 9,8 m/s²).
 
 .. code-block:: python
 
     ADXL345.read(axis)
 
-**Constants**
+**Konstanten**
+
+-  ``X`` - X-Achse
+-  ``Y`` - Y-Achse
+-  ``Z`` - Z-Achse
 
 
--  ``X`` - x axis
--  ``Y`` - y axis
--  ``Z`` - z axis
 

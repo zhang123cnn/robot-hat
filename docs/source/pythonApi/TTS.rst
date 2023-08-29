@@ -1,53 +1,57 @@
-class ``TTS`` - text to speech
-==============================
+Klasse ``TTS`` - Text-zu-Sprache
+================================
 
-**Usage**
+**Verwendung**
 
 .. code-block:: python
 
        from robot_hat import *
 
-       tts = TTS()                     # create a TTS object
-       tts.say('hello')                # write word
+       tts = TTS()                       # Ein TTS-Objekt erzeugen
+       tts.say('hello')                  # Wort ausgeben
 
-       # tts.write('hi')                # write word
-       tts.lang('en-GB')                # change language
+       # tts.write('hi')                 # Wort ausgeben
+       tts.lang('en-GB')                 # Sprache ändern
 
-       tts.supported_lang()            # return language
+       tts.supported_lang()              # Unterstützte Sprachen abfragen
 
-**Constructors**
+**Konstruktoren**
 
+``class robot_hat.TTS(engine)``: Erzeugt ein TTS-Objekt. Als ``engine`` können ``"espeak"``, ``"gtts"`` für Google TTS oder ``polly`` für AWS Polly verwendet werden.
 
-``class robot_hat.TTS(engine)``: Create a TTS object, ``engine`` could be ``"espeak"`` as Espeak, ``"gtts"`` as Google TTS and ``polly`` as AWS Polly.
+**Methoden**
 
-**Methods**
-
-
-- ``say`` - Write word on TTS.
+-  ``say`` - Wort über TTS ausgeben.
 
 .. code-block:: python
 
        TTS.say(words)
 
--  ``lang`` - Change on TTS.
+-  ``lang`` - Sprache in TTS ändern.
 
 .. code-block:: python
 
        TTS.lang(language)
 
--  ``supported_lang`` - Inquire all supported language.
+-  ``supported_lang`` - Alle unterstützten Sprachen abfragen.
 
 .. code-block:: python
 
        TTS.supported_lang()
 
--  parameter adjustment
+-  Parameteranpassung
 
 .. code-block:: python
 
-       # amp: amplitude, volume
-       # speed: speaking speed
-       # gap: gap
-       # pitch: pitch
+       # amp: Amplitude, Lautstärke
+       # speed: Sprechgeschwindigkeit
+       # gap: Pause
+       # pitch: Tonhöhe
        def espeak_params(self, amp=None, speed=None, gap=None, pitch=None)
+
+
+
+
+
+
 
