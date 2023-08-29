@@ -1,53 +1,50 @@
-class ``TTS`` - text to speech
-==============================
+class ``TTS`` - テキストから音声へ
+===================================
 
-**Usage**
+**使用方法**
 
 .. code-block:: python
 
        from robot_hat import *
 
-       tts = TTS()                     # create a TTS object
-       tts.say('hello')                # write word
+       tts = TTS()                    # TTSオブジェクトを作成
+       tts.say('hello')               # 単語を発音
 
-       # tts.write('hi')                # write word
-       tts.lang('en-GB')                # change language
+       # tts.write('hi')              # 単語を発音
+       tts.lang('en-GB')              # 言語を変更
 
-       tts.supported_lang()            # return language
+       tts.supported_lang()           # サポートされている言語を取得
 
-**Constructors**
+**コンストラクタ**
 
+``class robot_hat.TTS(engine)``: TTSオブジェクトを作成。 ``engine`` には ``"espeak"`` をEspeak、 ``"gtts"`` をGoogle TTS、 ``"polly"`` をAWS Pollyとして指定できます。
 
-``class robot_hat.TTS(engine)``: Create a TTS object, ``engine`` could be ``"espeak"`` as Espeak, ``"gtts"`` as Google TTS and ``polly`` as AWS Polly.
+**メソッド**
 
-**Methods**
-
-
-- ``say`` - Write word on TTS.
+-  ``say`` - TTSで単語を発音。
 
 .. code-block:: python
 
        TTS.say(words)
 
--  ``lang`` - Change on TTS.
+-  ``lang`` - TTSでの言語を変更。
 
 .. code-block:: python
 
        TTS.lang(language)
 
--  ``supported_lang`` - Inquire all supported language.
+-  ``supported_lang`` - サポートされている全言語を照会。
 
 .. code-block:: python
 
        TTS.supported_lang()
 
--  parameter adjustment
+-  パラメータ調整
 
 .. code-block:: python
 
-       # amp: amplitude, volume
-       # speed: speaking speed
-       # gap: gap
-       # pitch: pitch
+       # amp: 振幅、音量
+       # speed: 語速
+       # gap: 間隔
+       # pitch: ピッチ
        def espeak_params(self, amp=None, speed=None, gap=None, pitch=None)
-

@@ -1,10 +1,10 @@
-FAQ
-================
+FAQ（よくある質問）
+====================
 
-**Q: Can the battery be connected while providing power to the Raspberry Pi at the same time?**
+**Q: Raspberry Piに電力を供給しながらバッテリーを接続することはできますか？**
 
-A: Yes, the Robot HAT has a built-in anti-backflow diode that prevents the Raspberry Pi's power from flowing back into the Robot HAT.
+A: はい、Robot HATには内蔵の逆流防止ダイオードがあり、Raspberry Piからの電力がRobot HATに逆流するのを防ぎます。
 
-**Q: Can the Robot HAT be used while charging?**
+**Q: Robot HATは充電中に使用できますか？**
 
-A: Yes, the Robot HAT can be used while charging. When charging, the input power is boosted by the charging chip to charge the batteries, while also providing power to the DC-DC step-down for external use. The charging power is approximately 10W. If the external power consumption is too high for an extended period, the batteries may supplement the power, similar to how a mobile phone charges while in use. However, it is important to be mindful of the battery's capacity to avoid draining it completely during simultaneous charging and usage.
+A: はい、Robot HATは充電中も使用可能です。充電時には、充電チップが入力電力をブーストしてバッテリーを充電し、同時にDC-DCステップダウンへの外部使用にも電力を供給します。充電電力は約10Wです。外部での電力消費が長期間高い場合、バッテリーが補足電源として機能する可能性があります。これは、使用中のモバイルフォンが充電する仕組みと似ています。ただし、同時に充電と使用を行う際には、バッテリーの容量に注意することが重要です。

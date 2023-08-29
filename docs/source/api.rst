@@ -1,4 +1,4 @@
-Robot HAT API Reference
+Robot HAT APIリファレンス
 ==========================
 
 Basic

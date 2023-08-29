@@ -1,51 +1,48 @@
-class ``Buzzer`` - passive buzzer
+class ``Buzzer`` - パッシブブザー
 =================================
 
-**Usage**
+**使用方法**
 
 .. code-block:: python
 
     from robot_hat import PWM, Buzzer, Music
 
-    pwm = PWM("A0")                 # create a pwm object
-    buzzer = Buzzer(pwm)            # create a Buzzer object with PWM object
-    music = Music()                 # create music object
+    pwm = PWM("A0")                           # PWMオブジェクトを生成
+    buzzer = Buzzer(pwm)                      # PWMオブジェクトを使用してBuzzerオブジェクトを生成
+    music = Music()                           # Musicオブジェクトを生成
 
-    buzzer.play(music.note("Low C"), music.beat(1))   # play low C for 1 beat
-    buzzer.play(music.note("Middle C#"))              # play middle C sharp
-    buzzer.off()                                      # turn buzzer off
+    buzzer.play(music.note("Low C"), music.beat(1))  # ローCを1拍で演奏
+    buzzer.play(music.note("Middle C#"))             # ミドルC#を演奏
+    buzzer.off()                                     # ブザーをオフにする
 
-**Constructors**
+**コンストラクタ**
 
+``class robot_hat.Buzzer(pwm)``: 与えられたPWMオブジェクトに関連付けられたBuzzerオブジェクトを生成します。
+これにより、ブザーを制御できます。
 
-``class robot_hat.Buzzer(pwm)``: Create a Buzzer object associated with the given pwm object. This will allow you to control the buzzer.
+**メソッド**
 
-**Methods**
-
-
--  ``on`` - Turn the buzzer on with a square wave.
+-  ``on`` - ブザーを正方形波でオンにします。
 
 .. code-block:: python
 
     Buzzer.on()
 
--  ``off`` - Turn the buzzer off.
+-  ``off`` - ブザーをオフにします。
 
 .. code-block:: python
 
     Buzzer.off()
 
--  ``freq`` - Set the frequency of the square wave.
+-  ``freq`` - 正方形波の周波数を設定します。
 
 .. code-block:: python
 
     Buzzer.freq(frequency)
 
--  ``play`` - Make the buzzer sound at a specific frequency and stop at a ms delay time.
+-  ``play`` - ブザーを特定の周波数で鳴らし、指定したミリ秒遅延時間で停止します。
 
 .. code-block:: python
 
     Buzzer.play(freq, ms)
     Buzzer.play(freq)
-
-

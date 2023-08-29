@@ -1,9 +1,9 @@
-Install the ``robot-hat``
+``robot-hat`` のインストール
 ==============================
 
-``robot-hat`` is the supported library for the Robot HAT.
+``robot-hat`` はRobot HATに対応したライブラリです。
 
-Type this command into the terminal to install the Robot HAT package.
+Robot HATパッケージをインストールするには、ターミナルで以下のコマンドを実行してください。
 
 .. code-block::
 
@@ -11,8 +11,8 @@ Type this command into the terminal to install the Robot HAT package.
    cd robot-hat
    sudo python3 setup.py install
 
-
 .. note::
-   Run setup.py to download some necessary components. You may have a network problem and the download may fail. At this point you may need to download again. In the following cases, type Y and press Enter to continue the process.
+   setup.pyを実行すると、必要なコンポーネントがダウンロードされます。ネットワークの問題でダウンロードに失敗する場合があります。その際は、再度ダウンロードが必要です。以下のケースで「Y」を入力し、Enterキーを押して処理を続行してください。
 
 .. image:: img/dowload_code.png
+

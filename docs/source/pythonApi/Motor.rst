@@ -1,29 +1,31 @@
 .. _class_motor:
 
-class ``Motor`` - motor control
+class ``Motor`` - モータ制御
 ===========================================
 
-**Usage**
+**使用方法**
 
 .. code-block:: python
 
     from robot_hat import Motor
 
-    motor = Motor()                     # Create a motor object
-    motor = motor.wheel(100)            # Set the motor speed to 100
+    motor = Motor()                     # モータオブジェクトを作成
+    motor.wheel(100)                    # モータの速度を100に設定
 
-**Constructors**
+**コンストラクタ**
 
-``class robot_hat.Motor()``: Create a motor object, you can use it to control the motors.
+``class robot_hat.Motor()``: モータオブジェクトを作成し、これを使用してモータを制御します。
 
-**Methods**
+**メソッド**
 
--  ``wheel`` - Control the speed and direction of the motor.
+-  ``wheel`` - モータの速度と回転方向を制御。
 
 .. code-block:: python
 
-    # The speed range is -100 to 100, and the positive and negative values represent the direction of rotation of the motor.
+    # 速度の範囲は-100から100までで、正と負の値はモータの回転方向を示します。
     motor.wheel(100)
 
-    # The second parameter, filled with 0 or 1, is used to control a specific motor.
-    motor.wheel(100,1)
+    # 第二パラメータには0か1を指定し、特定のモータを制御します。
+    motor.wheel(100, 1)
+
+

@@ -1,52 +1,52 @@
 .. _class_pwm:
 
-class ``PWM`` - pulse width modulation
+class ``PWM`` - パルス幅変調
 ======================================
 
-**Usage**
+**使用方法**
 
 .. code-block:: python
 
     from robot_hat import PWM
 
-    pwm = PWM('P0')                                 # create a PWM object from a pin
-    PWM.freq(*freq)                                 #Frequency (0-65535, unit Hz)
-    PWM.prescaler(*prescaler)                       #Prescaler
+    pwm = PWM('P0')                      # ピンからPWMオブジェクトを作成
+    PWM.freq(*freq)                      # 周波数（0-65535、単位はHz）
+    PWM.prescaler(*prescaler)            # プリスケーラ
     PWM.period(*arr)  
-    PWM.pulse_width(*pulse_width)                   # Pulse width (pulse_width < period)
-    PWM.pulse_width_percent(*pulse_width_percent)   # Duty cycle (0-100)
+    PWM.pulse_width(*pulse_width)        # パルス幅（pulse_width < period）
+    PWM.pulse_width_percent(*pulse_width_percent)  # デューティーサイクル（0-100）
 
-**Constructors**
+**コンストラクタ**
 
-``class robot_hat.PWM(channel)``: Create a PWM object associated with the given pin. This allows you set up the pwm function on that pin.
+``class robot_hat.PWM(channel)``: 指定されたピンに関連付けられたPWMオブジェクトを作成します。これにより、そのピンでpwm機能を設定できます。
 
-**Methods**
+**メソッド**
 
--  ``freq`` - Set the frequency of the pwm channel.
+-  ``freq`` - pwmチャンネルの周波数を設定します。
 
 .. code-block:: python
 
     PWM.freq(50)
 
--  ``prescaler`` - Set the prescaler for the pwm channel.
+-  ``prescaler`` - pwmチャンネルのプリスケーラを設定します。
 
 .. code-block:: python
 
     PWM.prescaler(50)
 
--  ``period`` - Set the period of the pwm channel.
+-  ``period`` - pwmチャンネルの周期を設定します。
 
 .. code-block:: python
 
     PWM.period(100)
 
--  ``pulse_width`` - Set the pulse width of the pwm channel.
+-  ``pulse_width`` - pwmチャンネルのパルス幅を設定します。
 
 .. code-block:: python
 
     PWM.pulse_width(10)
 
--  ``pulse_width_percent`` - Sets the pulse width percentage of the pwm channel.
+-  ``pulse_width_percent`` - pwmチャンネルのパルス幅のパーセンテージを設定します。
 
 .. code-block:: python
 

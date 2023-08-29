@@ -1,24 +1,24 @@
 .. _class_adc:
 
-class ``ADC`` - analog to digital converter
-===========================================
+class ``ADC`` - アナログからデジタルへの変換器
+==============================================
 
-**Usage**
+**使用方法**
 
 .. code-block:: python
 
     from robot_hat import ADC
 
-    adc = ADC("A0")                     # create an analog object from a pin
-    val = adc.read()                    # Read values from analog pins
+    adc = ADC("A0")                     # ピンからアナログオブジェクトを作成
+    val = adc.read()                    # アナログピンから値を読み取る
 
-**Constructors**
+**コンストラクタ**
 
-``class robot_hat.ADC(pin)``: Create an ADC object associated with the given pin. This allows you to then read analog values on that pin.
+``class robot_hat.ADC(pin)``: 指定されたピンに関連付けられたADCオブジェクトを作成します。これにより、そのピンでアナログ値を読むことができます。
 
-**Methods**
+**メソッド**
 
--  ``read`` - Read the value on the analog pin and return it. The returned value will be between 0 and 4095.
+-  ``read`` - アナログピンの値を読み取り、返します。返される値は0から4095の間になります。
 
 .. code-block:: python
 

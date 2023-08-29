@@ -1,7 +1,7 @@
-class ``Joystick`` - 3-axis joystick
-====================================
+class ``Joystick`` - 3軸ジョイスティック
+========================================
 
-**Usage**
+**使用方法**
 
 .. code-block:: python
 
@@ -11,28 +11,25 @@ class ``Joystick`` - 3-axis joystick
     y_pin = ADC("A1")
     btn_pin = Pin("D1")
 
-    joystick = Joystick(x_pin, y_pin, btn_pin)         # create a Joystick object
-    val = joystick.read(0)                             # read an axis value
-    status = joystick.read_status()                    # read the status of joystick
+    joystick = Joystick(x_pin, y_pin, btn_pin)    # ジョイスティックオブジェクトを生成
+    val = joystick.read(0)                        # 軸の値を読む
+    status = joystick.read_status()               # ジョイスティックの状態を読む
 
-**Constructors**
+**コンストラクタ**
 
+``class robot_hat.Joystick(pin)``: 与えられたピンに関連付けられたジョイスティックオブジェクトを生成します。これにより、ジョイスティックからの値を読むことができます。
 
-``class robot_hat.Joystick(pin)``: Create a Joystick object associated with the given pin. This allows you to read values from Joystick.
+**メソッド**
 
-**Methods**
-
-
--  ``read`` - Read the value on the given pins and return them.
+-  ``read`` - 指定されたピンの値を読み取り、それを返します。
 
 .. code-block:: python
 
     Joystick.read(Xpin, Ypin, Btpin)
 
--  ``read_status`` - read the status of joystick.
+-  ``read_status`` - ジョイスティックの状態を読み取ります。
 
 .. code-block:: python
 
     Joystick.read_status()
-
 

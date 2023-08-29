@@ -1,28 +1,26 @@
-class ``Sound`` - sound sensor
-==============================
+class ``Sound`` - 音センサー
+============================
 
-**Usage**
+**使用方法**
 
 .. code-block:: python
 
     from robot_hat import Sound, ADC
 
     pin = ADC("A0")
-    sound = Sound(pin)                         # create a Sound object from a pin
-    val = sound.read_raw()                     # read an analog value
+    sound = Sound(pin)                       # ピンからSoundオブジェクトを生成
+    val = sound.read_raw()                   # アナログ値を読む
 
-    average_val = sound.read_raw(time = 100)   # read an average analog value
+    average_val = sound.read_raw(time = 100) # 平均アナログ値を読む
 
-**Constructors**
+**コンストラクタ**
 
-``class robot_hat.Sound(pin)``: Create a Sound object associated with the given pin. This allows you to read analog values on that pin.
+``class robot_hat.Sound(pin)``: 与えられたピンに関連付けられたSoundオブジェクトを生成します。このオブジェクトでピンのアナログ値を読むことができます。
 
-**Methods**
+**メソッド**
 
--  ``read_raw`` - Read the value on the analog pin and return it. The returned value will be between 0 and 4095.
+-  ``read_raw`` - アナログピンの値を読み取り、それを返します。返される値は0から4095の範囲になります。
 
 .. code-block:: python
 
     Sound.read_raw()
-
-

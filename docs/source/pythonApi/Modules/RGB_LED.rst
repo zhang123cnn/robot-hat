@@ -1,7 +1,7 @@
 class ``RGB_LED`` - rgb LED
-===========================
+=================================
 
-**Usage**
+**使用方法**
 
 .. code-block:: python
 
@@ -11,22 +11,18 @@ class ``RGB_LED`` - rgb LED
     g = PWM("P1")
     b = PWM("P2")
 
-    rgb = RGB_LED(r, g, b)                       # Create a RGB_LED object
-    val = rgb.write('#FFFFFF')                   # Write in the color in hexadecimal.
+    rgb = RGB_LED(r, g, b)                  # RGB_LEDオブジェクトを生成
+    val = rgb.write('#FFFFFF')              # 16進数で色を指定して書き込む
 
-Constructors
-------------
+**コンストラクタ**
 
-``class robot_hat.RGB_LED(Rpin, Gpin, Bpin)``: Create a ``RGB_LED`` object associated with the given pin. This allows you set the color of RGB LED. 
-Input ``Rpin``, ``Gpin``, ``Bpin`` must be ``PWM`` object from ``robot_hat.PWM``.
+``class robot_hat.RGB_LED(Rpin, Gpin, Bpin)``: 与えられたピンと関連づけられた ``RGB_LED`` オブジェクトを生成。このオブジェクトでRGB LEDの色を設定できます。
+入力 ``Rpin`` , ``Gpin``, ``Bpin`` は ``robot_hat.PWM`` からの ``PWM`` オブジェクトでなければなりません。
 
-**Methods**
+**メソッド**
 
-
--  ``write`` - Writing a specific color to the RGB LED, the color value is represented by hexadecimal for red, green and blue (RGB). Each color has a minimum value of 0 (00 in hexadecimal) and a maximum value of 255 (FF in hexadecimal). Hexadecimal values are written with a # sign followed by three or six hexadecimal characters.
+-  ``write`` - RGB LEDに特定の色を書き込む。色の値は、赤、緑、青（RGB）の16進数で表されます。各色の最小値は0（16進数で00）であり、最大値は255（16進数でFF）です。16進数の値は、#記号に続く3文字または6文字で書きます。
 
 .. code-block:: python
 
     RGB_LED.write(color)
-
-

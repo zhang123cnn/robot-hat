@@ -1,63 +1,63 @@
 .. _class_pin:
 
 
-class ``Pin`` - control I/O pins
+クラス ``Pin`` - I/Oピン制御
 ================================
 
-**Usage**
+**使用方法**
 
 .. code-block:: python
 
     from robot_hat import Pin
 
-    pin = Pin("D0")                      # create a Pin object from a digital pin
-    val = pin.value()                    # read the value on the digital pin
+    pin = Pin("D0")                      # デジタルピンからPinオブジェクトを作成
+    val = pin.value()                    # デジタルピンの値を読む
 
-    pin.value(0)                         # set the digital pin to low level
+    pin.value(0)                         # デジタルピンをローレベルに設定
 
-**Constructors**
+**コンストラクタ**
 
-``class robot_hat.Pin(value)`` : The ``Pin()`` is the basic object to control I/O pins. It has methods to set the pin mode (input, output, etc.) and methods to get or set the level of a digital pin.
+``class robot_hat.Pin(value)`` : ``Pin()`` はI/Oピンを制御する基本的なオブジェクトです。ピンモード（入力、出力など）を設定するメソッドや、デジタルピンのレベルを取得・設定するメソッドがあります。
 
+**メソッド**
 
-**Methods**
-
--  ``value`` - Read or set the value on the digital pin, the value is 0/1.
-
-.. code-block:: python
-
-    Pin.value() # Without parameters, read gpio level, high level returns 1, low level returns 0.
-
-    Pin.value(0)  # set to low level    
-    Pin.value(1)  # set to high level
-
--  Set the value to the digital pin, same as ``value``.
+-  ``value`` - デジタルピンの値を読むまたは設定する、値は0/1。
 
 .. code-block:: python
 
-    Pin.on() # set to high level
-    #off() # set to low level
-    #high() # set to high level
-    #low() # set to low level
+    Pin.value() # パラメータなしでGPIOレベルを読む。ハイレベルは1、ローレベルは0を返す。
 
--  ``mode`` - Set the mode of GPIO to ``IN`` or ``OUT``.
+    Pin.value(0)  # ローレベルに設定
+    Pin.value(1)  # ハイレベルに設定
+
+-  ``value`` と同様にデジタルピンの値を設定。
 
 .. code-block:: python
-    
-    Pin.mode(GPIO.IN)  # set gipo to INPUT mode
 
-**Availble Pins**
+    Pin.on()  # ハイレベルに設定
+    #off()  # ローレベルに設定
+    #high() # ハイレベルに設定
+    #low()  # ローレベルに設定
 
--  ``"D0"``: The Digital pin 0.
--  ``"D1"``: The Digital pin 1.
--  ``"D2"``: The Digital pin 2.
--  ``"D3"``: The Digital pin 3.
--  ``"D4"``: The left motor pin.
--  ``"D5"``: The right motor pin.
+-  ``mode`` - GPIOのモードを ``IN`` または ``OUT`` に設定。
+
+.. code-block:: python
+
+    Pin.mode(GPIO.IN)  # GPIOをINPUTモードに設定
+
+**利用可能なピン**
+
+-  ``"D0"``: デジタルピン0。
+-  ``"D1"``: デジタルピン1。
+-  ``"D2"``: デジタルピン2。
+-  ``"D3"``: デジタルピン3。
+-  ``"D4"``: 左モーターピン。
+-  ``"D5"``: 右モーターピン。
 -  ``"D6"``
 -  ``"D7"``
 -  ``"D8"``
 -  ``"D9"``
--  ``"SW"``: The USR button.
--  ``"LED"``: The LED on the board.
+-  ``"SW"``: USRボタン。
+-  ``"LED"``: ボード上のLED。
+
 

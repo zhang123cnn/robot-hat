@@ -1,154 +1,152 @@
-Hardware Introduction
+ハードウェア紹介
 =========================
 
 .. .. image:: img/picar_x_pic7.png
 
-.. **Motor Port**
-..     * 2-channel XH2.54 motor ports.
-..     * The motor port 1 is connected to GPIO 23 and the motor port 2 is connected to GPIO 24.
-..     * API: :ref:`class_motor`, ``0`` for left motor port, ``1`` for right motor port.
+.. **モーターポート**
+..     * 2チャンネルのXH2.54モーターポート。
+..     * モーターポート1はGPIO 23に、モーターポート2はGPIO 24に接続されています。
+..     * API: :ref:`class_motor`、左モーターポートは``0``、右モーターポートは``1``。
 
-.. **I2C Pin**
-..     * 2-channel I2C pins from Raspberry Pi.
+.. **I2Cピン**
+..     * Raspberry Piからの2チャンネルI2Cピン。
 ..     * API: :ref:`class_i2c`
 
-.. **PWM Pin**
-..     * 12-channel PWM pins, P0-P12.
+.. **PWMピン**
+..     * 12チャンネルのPWMピン、P0-P12。
 ..     * API: :ref:`class_pwm`
 
-.. **ADC Pin**
-..     * 4-channel ADC pins, A0-A3.
+.. **ADCピン**
+..     * 4チャンネルのADCピン、A0-A3。
 ..     * API: :ref:`class_adc`
 
-.. **Digital Pin**
-..     * 4-channel digital pins, D0-D3.
+.. **デジタルピン**
+..     * 4チャンネルのデジタルピン、D0-D3。
 ..     * API: :ref:`class_pin`
 
-.. **Battery Indicator**
-..     * Two LEDs light up when the voltage is higher than 7.8V.
-..     * One LED lights up in the 6.7V to 7.8V range. 
-..     * Below 6.7V, both LEDs turn off.
+.. **バッテリーインジケーター**
+..     * 電圧が7.8V以上の場合、2つのLEDが点灯します。
+..     * 6.7Vから7.8Vの範囲で1つのLEDが点灯します。
+..     * 6.7V以下では、両方のLEDが消灯します。
 
 .. **LED**
-..     * Set by your program. (Outputting 1 turns the LED on; Outputting 0 turns it off.)
-..     * API: :ref:`class_pin`, you can use ``Pin("LED")`` to define it.
+..     * プログラムによって設定（1を出力で点灯、0を出力で消灯）。
+..     * API: :ref:`class_pin`、``Pin("LED")``で定義可能。
 
-.. **RST Button**
-..     * Short pressing RST Button causes program resetting.
-..     * Long press RST Button till the LED lights up then release, and you will disconnect the Bluetooth.
+.. **RSTボタン**
+..     * RSTボタンを短く押すとプログラムがリセットされます。
+..     * LEDが点灯するまでRSTボタンを長押し、その後解放するとBluetoothが切断されます。
 
-.. **USR Button**
-..     * The functions of USR Button can be set by your programming. (Pressing down leads to a input “0”; releasing produces a input “1”. ) 
-..     * API: :ref:`class_pin`, you can use ``Pin("SW")`` to define it.
+.. **USRボタン**
+..     * USRボタンの機能はプログラミングで設定可能（押下で“0”入力、解放で“1”入力）。
+..     * API: :ref:`class_pin`、``Pin("SW")``で定義可能。
 
-.. **Power Switch**
-..     * Turn on/off the power of the robot HAT.
-..     * When you connect power to the power port, the Raspberry Pi will boot up. However, you will need to switch the power switch to ON to enable Robot HAT.
+.. **電源スイッチ**
+..     * ロボットHATの電源をオン/オフ。
+..     * 電源ポートに電源を接続すると、Raspberry Piが起動しますが、ロボットHATを有効にするには電源スイッチをONにする必要があります。
 
-.. **Power Port**
-..     * 7-12V PH2.0 2pin power input.
-..     * Powering the Raspberry Pi and Robot HAT at the same time.
+.. **電源ポート**
+..     * 7-12V PH2.0 2ピン電源入力。
+..     * Raspberry PiとロボットHATを同時に給電。
 
-.. **Bluetooth Module**
-..     * Since the Raspberry Pi comes with Bluetooth in slave mode, there will be pairing problems when connecting with cell phones. To make it easier for the Raspberry Pi to connect to the Ezblock Studio, we added a separate Bluetooth module.
-..     * Ezblock Studio is a custom graphical programming application developed by SunFounder for Raspberry Pi, for more information please refer to: `Ezblock Studio 3 <https://docs.sunfounder.com/projects/ezblock3/en/latest/>`_.
+.. **Bluetoothモジュール**
+..     * Raspberry PiはスレーブモードでBluetoothを搭載しているため、携帯電話とのペアリングに問題があります。Raspberry PiがEzblock Studioに容易に接続できるように、別のBluetoothモジュールを追加しました。
+..     * Ezblock Studioは、SunFounderがRaspberry Pi用に開発したカスタムのグラフィカルプログラミングアプリケーションです。詳細はこちら：`Ezblock Studio 3 <https://docs.sunfounder.com/projects/ezblock3/en/latest/>`_。
 
+.. **Bluetoothインジケーター**
+..     * Bluetooth接続が正常な場合は点灯し続け、接続が切断された場合は点滅し、信号が送信されている場合は高速に点滅します。
 
-.. **Bluetooth Indicator**
-..     * The Bluetooth indicator keeps turning on at a well Bluetooth connection, blink at a Bluetooth disconnection, blink fast at a signal transmission.    
+Robot Hat V4は、2つのリチウムバッテリー充電、5V/3A DC-DC放電、I2Sオーディオ出力とスピーカー、簡易バッテリーレベルインジケーター、マイクロコントローラベースのPWMとADCドライバー、さらにモータードライバーも搭載しています。
 
-The Robot Hat V4 features 2 lithium battery charging, 5V/3A DC-DC discharge, I2S audio output and speaker, a simple battery level indicator, microcontroller-based PWM and ADC drivers, as well as motor drivers.
+特長:
+    * シャットダウン電流: < 0.5mA
+    * 電源入力: USB Type-C、5V/2A
+    * 充電電力: 5V/2A 10W
+    * 出力電力: 5V/3A
+    * 付属バッテリー: 2 x 3.7V 18650 リチウムイオンバッテリー、XH2.0 3Pインターフェース
+    * バッテリー保護: 逆極性保護
+    * 充電保護: 入力過電圧保護、充電バランス、過熱保護
+    * 搭載充電インジケーターライト: CHG
+    * 搭載電源インジケーターライト: PWR
+    * 搭載2つのバッテリーレベルインジケーターLED
+    * ユーザーLED、2つのタクタイルスイッチ搭載
+    * モータードライバー: 5V/1.8A x 2
+    * 4チャンネル 12ビットADC
+    * 12チャンネルPWM
+    * 4チャンネルデジタル信号
+    * SPIインターフェース、UARTインターフェース、I2Cインターフェース搭載
+    * モノラルスピーカー: 8Ω1W
 
-
-Features:
-    * Shutdown Current: < 0.5mA
-    * Power Input: USB Type-C, 5V/2A
-    * Charging Power: 5V/2A 10W
-    * Output Power: 5V/3A
-    * Included Batteries: 2 x 3.7V 18650 Lithium-ion Batteries, XH2.0 3P Interface
-    * Battery Protection: Reverse polarity protection
-    * Charging Protection: Input undervoltage protection, input overvoltage protection, charging balance, overheat protection
-    * Onboard Charging Indicator Light: CHG
-    * Onboard Power Indicator Light: PWR
-    * Onboard 2 Battery Level Indicator LEDs
-    * Onboard User LED, 2 tactile switches
-    * Motor Driver: 5V/1.8A x 2
-    * 4-channel 12-bit ADC
-    * 12-channel PWM
-    * 4-channel digital signals
-    * Onboard SPI interface, UART interface, I2C interface
-    * Mono Speaker: 8Ω1W
-
-.. list-table:: Electrical Characteristics
+.. list-table:: 電気的特性
    :widths: 50 25 25 25 25
    :header-rows: 1
 
-   * - Parameters:
-     - Minimum Value:
-     - Typical Value:
-     - Maximum Value:
-     - Unit:
-   * - Input Voltage:
+   * - パラメーター:
+     - 最小値:
+     - 典型値:
+     - 最大値:
+     - 単位:
+   * - 入力電圧:
      - 4.25
      - 5
      - 8.4
      - V
-   * - Battery Input Voltage:
+   * - バッテリー入力電圧:
      - 6.0
      - 7.4
      - 8.4
      - V
-   * - Overcharge Protection (Battery):
+   * - 過充電保護（バッテリー）:
      -
      - 8.3
      -
      - V
-   * - Input Undervoltage Protection:
+   * - 入力過小電圧保護:
      - 4.15
      - 4.25
      - 4.35
      - V
-   * - Input Overvoltage Protection:
+   * - 入力過大電圧保護:
      - 8.3
      - 8.4
      - 8.5
      - V
-   * - Charging Current (5V):
+   * - 充電電流（5V）:
      -
      -
      - 2.0
      - A
-   * - Output Current (5V):
+   * - 出力電流（5V）:
      -
      -
      - 3.0
      - A
-   * - Output Voltage:
+   * - 出力電圧:
      - 5.166
      - 5.246
      - 5.327
      - V
-   * - Charging Overheat Protection:
+   * - 充電過熱保護:
      - 125
      - 135
      - 145
      - °C
-   * - DC-DC Overheat Protection:
+   * - DC-DC過熱保護:
      - 70
      - 75
      - 80
      - °C
-   * - Motor Output Current:  
+   * - モーター出力電流:
      -
      -
      - 1.8
      - A  
 
 
-Details
+詳細
 ----------------
 
-**Pin & GPIO**
+**ピン & GPIO**
 
 .. list-table:: Raspberry Pi IO
     :widths: 50 50 50 50
@@ -188,11 +186,11 @@ Details
       - GND
     * - D3
       - GPIO22    
-      - MOTOR 1 DIR
+      - モーター1 DIR
       - GPIO23
     * - NC
       - 3V3    
-      - MOTOR 2 DIR
+      - モーター2 DIR
       - GPIO24
     * - SPI MOSI
       - MOSI    
@@ -200,7 +198,7 @@ Details
       - GND
     * - SPI MISO
       - MISO    
-      - USR BUTTON
+      - USRボタン
       - GPIO25
     * - SPI SCLK
       - SCLK    
@@ -214,23 +212,23 @@ Details
       - ID_SD    
       - NC
       - ID_SC
-    * - MCU Reset
+    * - MCUリセット
       - GPIO5    
       - GND
       - GND
     * - (SPI)BSY 
       - GPIO6    
-      - Board Identifier 2
+      - ボード識別子2
       - GPIO12
-    * - Board Identifier 1
+    * - ボード識別子1
       - GPIO13    
       - GND
       - GND
     * - I2S LRCLK
       - GPIO19    
-      - RST BUTTON
+      - RSTボタン
       - GPIO16
-    * - USER LED
+    * - ユーザーLED
       - GPIO26    
       - NC
       - GPIO20
@@ -240,13 +238,14 @@ Details
       - GPIO21
 
 
-**Digital IO**
-    
-Robot HAT has 4 sets of 3Pin digital pins of P2.54.
+
+**デジタルIO**
+
+Robot HATには、P2.54の3ピンデジタルピンが4セットあります。
 
 .. image:: img/digitalio.png
 
-.. list-table:: Digital IO
+.. list-table:: デジタルIO
     :widths: 25 50
     :header-rows: 1
 
@@ -270,51 +269,49 @@ Robot HAT has 4 sets of 3Pin digital pins of P2.54.
 
 .. image:: img/adcpin.png
 
-Robot HAT has 4 sets of 3Pin ADC pins of P2.54, and the power supply is 3.3V.
-The ADC (Analog to Digital Converter) is provided by a microcontroller with 12-bit precision. 
-The method of reading the ADC value is described in detail in `Onboard microcontroller`.
+Robot HATには、P2.54の3ピンADCピンが4セットあり、電源供給は3.3Vです。
+このADC（アナログ・デジタル変換器）は、12ビット精度のマイクロコントローラによって提供されます。
+ADCの値を読む方法は、「オンボードマイクロコントローラ」で詳細に説明されています。
 
 .. image:: img/btradc.png
 
-Also, ADC channel A4 is connected to the battery through a voltage divider using resistors, 
-which will be used to measure the battery voltage to estimate the approximate battery charge.
+また、ADCチャネルA4は、抵抗器を用いた電圧分配器を介してバッテリーに接続されており、バッテリーの電圧を測定しておおよその充電状態を推定します。
 
-The voltage divider ratio is 20K/10K, so:
-A4 voltage (Va4) = value_A4 / 4095.0 * 3.3
-Battery voltage (Vbat) = Va4*3
-Battery voltage (Vbat) = value_A4 / 4095.0 * 3.3 * 3
+分圧比は20K/10Kなので、
+A4電圧（Va4）= value_A4 / 4095.0 * 3.3
+バッテリー電圧（Vbat）= Va4 * 3
+バッテリー電圧（Vbat）= value_A4 / 4095.0 * 3.3 * 3
 
 **PWM**
 
 .. image:: img/pwmpin.png
 
-Robot HAT has 4 sets of 3Pin ADC pins of P2.54, and the power supply is 5V.
-The method of using the PWM is described in detail in `Onboard microcontroller`.
+Robot HATには、P2.54の3ピンADCピンが4セットあり、電源供給は5Vです。
+PWMの使用方法は、「オンボードマイクロコントローラ」で詳細に説明されています。
 
-.. note:: PWM13 & 14 channels are used for motor drive.
+.. note:: PWM13および14チャネルは、モータードライブに使用されます。
 
 **I2C**
 
 .. image:: img/i2cpin.png
 
-The Robot HAT has two I2C interfaces. One is the P2.54 4-pin interface, and the other is the SH1.0 4-pin interface, which is compatible with QWIIC and STEMMA QT. 
-These I2C interfaces are connected to the Raspberry Pi's I2C interface via GPIO2 (SDA) and GPIO3 (SCL). 
-The board also features an `onboard microcontroller`, and the two signal lines have 10K pull-up resistors.
+Robot HATには2つのI2Cインターフェースがあります。一つはP2.54の4ピンインターフェースで、もう一つはQWIICとSTEMMA QTと互換性のあるSH1.0の4ピンインターフェースです。
+これらのI2Cインターフェースは、Raspberry PiのI2CインターフェースにGPIO2（SDA）とGPIO3（SCL）を介して接続されています。
+ボードには「オンボードマイクロコントローラ」も搭載されており、2つの信号線には10Kのプルアップ抵抗があります。
+
 
 **SPI**
 
 .. image:: img/spipin.png
 
-The SPI interface of the Robot HAT is a 7-pin P2.54 interface. 
-It connects to the SPI interface of the Raspberry Pi and includes an additional I/O pin that can be used for purposes such as interrupts or resets.
-
+Robot HATのSPIインターフェースは7ピンのP2.54規格で、Raspberry PiのSPIインターフェースに接続します。さらに、割り込みやリセット等の用途に使える追加のI/Oピンも装備しています。
 
 .. list-table:: SPI
     :widths: 50 50
     :header-rows: 1
 
     * - Robot Hat V4
-      - Raspberry Pi 
+      - Raspberry Pi
     * - BSY
       - GPIO6
     * - CS
@@ -326,30 +323,28 @@ It connects to the SPI interface of the Raspberry Pi and includes an additional 
     * - MO
       - MOSI(GPIO10)
     * - 3V3
-      - 3.3V Power
+      - 3.3V電源
     * - GND
-      - Ground
-
+      - グラウンド
 
 **UART**
 
 .. image:: img/uartpin.png
 
-The UART interface of the Robot HAT is a 4-pin P2.54 interface. It connects to the Raspberry Pi's GPIO14 (TXD) and GPIO15 (RXD) pins.
+Robot HATのUARTインターフェースは、4ピンのP2.54規格であり、Raspberry PiのGPIO14（TXD）およびGPIO15（RXD）に接続されます。
 
+**LED & ボタン**
 
-**LED & Button**
+Robot HATには1つのLEDと2つのボタンが搭載され、これらは全てRaspberry PiのGPIOピンに直接接続されています。
+Ezblockを使用する場合、RSTボタンはEzblockプログラムを再起動するためのものです。
+それ以外の場合、RSTボタンには特定の機能は設定されていないので、自由にカスタマイズ可能です。
 
-The Robot HAT comes with 1 LED and 2 buttons, all directly connected to the Raspberry Pi's GPIO pins. 
-The RST button, when using Ezblock, serves as a button to restart the Ezblock program. 
-If not using Ezblock, the RST button does not have a predefined function and can be fully customized according to your needs.
-
-.. list-table:: LED & Button
+.. list-table:: LED & ボタン
     :widths: 50 50
     :header-rows: 1
 
     * - Robot Hat V4
-      - Raspberry Pi 
+      - Raspberry Pi
     * - LED
       - GPIO26
     * - USR
@@ -357,11 +352,9 @@ If not using Ezblock, the RST button does not have a predefined function and can
     * - RST
       - GPIO16
 
+**I2Sオーディオ**
 
-**I2S Audio**
-
-The Robot HAT is equipped with onboard I2S audio output, along with a 2030 audio chamber speaker, providing a mono sound output.
-
+Robot HATは、オンボードのI2Sオーディオ出力と、2030オーディオチャンバースピーカーを装備しており、モノラルの音声出力が可能です。
 
 .. list-table:: I2S
     :widths: 50 50
@@ -376,17 +369,15 @@ The Robot HAT is equipped with onboard I2S audio output, along with a 2030 audio
     * - SDATA
       - GPIO21
 
+**モータードライバー**
 
-**Motor Driver**
+Robot HATのモータードライバーは、2チャンネルに対応しており、方向制御用の2つのデジタル信号と、速度制御用の2つのPWM信号で操作します。
 
-The motor driver of the Robot HAT supports 2 channels and can be controlled using 2 digital signals for direction and 2 PWM signals for speed control.
-
-
-.. list-table:: Motor Driver
+.. list-table:: モータードライバー
     :widths: 50 50
     :header-rows: 1
 
-    * - Motor
+    * - モーター
       - IO
     * - Motor1 Dir
       - GPIO23
@@ -397,108 +388,110 @@ The motor driver of the Robot HAT supports 2 channels and can be controlled usin
     * - Motor2 Power
       - PWM12
 
-**Charging Balancing**
+**充電バランシング**
 
-When any one of the batteries reaches or exceeds 4.1V while the others are below that threshold, 
-the charging current of that specific battery will be reduced.
+バッテリーのうち、一つが4.1Vに達したまたは超えた場合に、その他がその閾値以下であれば、特定のバッテリーの充電電流が低減します。
 
 
-**Battery Level Indicator**
 
-The battery level indicator on the Robot HAT monitors the battery voltage using a voltage divider method and serves as a reference for estimating the battery level. 
-The relationship between the LED and voltage is as follows:
 
-.. list-table:: Battery Level
+**バッテリーレベルインジケータ**
+
+Robot HATに搭載されたバッテリーレベルインジケータは、電圧分割法を使用してバッテリー電圧を監視し、バッテリーレベルの推定基準となります。
+LEDと電圧との関係は以下の通りです：
+
+.. list-table:: バッテリーレベル
     :widths: 50 50
     :header-rows: 1
 
-    * - LED Battery
-      - Total Voltage
-    * - 2 LEDs on
-      - Greater than 7.6V
-    * - 1 LED on
-      - Greater than 7.15V
-    * - Both LEDs off
-      - Less than 7.15V
+    * - LEDバッテリー
+      - 合計電圧
+    * - 2つのLED点灯
+      - 7.6V以上
+    * - 1つのLED点灯
+      - 7.15V以上
+    * - LED両方消灯
+      - 7.15V以下
 
-  
-**Battery**
+
+**バッテリー**
 
 .. image:: img/battery.png
 
-The product is equipped with two series-connected 3.7V 18650 lithium-ion batteries with a nominal capacity of 2000mAh. 
-The batteries are connected using an XH2.54 3-pin interface.
+本製品は、名目容量2000mAhの3.7V 18650リチウムイオンバッテリーを2個、直列接続しています。
+バッテリー接続にはXH2.54 3ピンインターフェースが用いられています。
 
-* Composition: Li-ion (Lithium-ion)
-* Capacity: 2000mAh, 14.8Wh
-* Weight: 90.8g
-* Number of Cells: 2
-* Connector: XH2.54 3P
-* Over-discharge Protection: 6.0V
+* 組成：Li-ion（リチウムイオン）
+* 容量：2000mAh、14.8Wh
+* 重量：90.8g
+* セル数：2
+* コネクタ：XH2.54 3P
+* 過放電保護：6.0V
 
-**Onboard Microcontroller**
 
-The Robot HAT comes with an AT32F415CBT7 microcontroller from Artery. 
-It is an ARM Cortex-M4 processor with a maximum clock frequency of 150MHz. 
-The microcontroller has 256KB of Flash memory and 32KB of SRAM.
+**オンボードマイクロコントローラー**
 
-The onboard PWM and ADC are driven by the microcontroller. 
-Communication between the Raspberry Pi and the microcontroller is established via the I2C interface. 
-The I2C address used for communication is 0x14 (7-bit address format).
+Robot HATにはArteryのAT32F415CBT7マイクロコントローラが搭載されています。
+最大クロック周波数150MHzのARM Cortex-M4プロセッサで、フラッシュメモリが256KB、SRAMが32KBあります。
 
-Register:
+オンボードのPWMとADCはこのマイクロコントローラによって制御されます。
+Raspberry Piとマイクロコントローラとの通信はI2Cインターフェースを介して確立され、通信に使用されるI2Cアドレスは0x14（7ビットアドレス形式）です。
 
-ADC Read Value (0x10-0x17) 
-  Reads the value of the ADC. Data is read back in 16-bit format [MSB], [LSB].
-  0x17: ADC 0
-  0x16: ADC 1
+レジスタ：
+
+ADC読取値（0x10-0x17）
+  ADCの値を読み取ります。データは16ビット形式[MSB]、[LSB]で読み取られます。
+  0x17：ADC 0
+  0x16：ADC 1
   ...
-  0x13: ADC 4
-  0x12: ADC 5 (Reserved)
-  0x11: ADC 6 (Reserved)
-  0x10: ADC 7 (Reserved)
+  0x13：ADC 4
+  0x12：ADC 5（予約）
+  0x11：ADC 6（予約）
+  0x10：ADC 7（予約）
 
-PWM Pulse Width (0x20-0x2D) 
-  Sets the PWM pulse width. Data is written in 16-bit format [MSB], [LSB].
-  0x20: PWM 0
-  0x21: PWM 1
+PWMパルス幅（0x20-0x2D）
+  PWMのパルス幅を設定します。データは16ビット形式[MSB]、[LSB]で書き込まれます。
+  0x20：PWM 0
+  0x21：PWM 1
   ...
-  0x2B: PWM 11
-  0x2C: PWM 12 (Motor)
-  0x2D: PWM 13 (Motor)
+  0x2B：PWM 11
+  0x2C：PWM 12（モーター）
+  0x2D：PWM 13（モーター）
 
-PWM Prescaler (0x40-0x43) 
-  Sets the prescaler for PWM. Data is written in 16-bit format [MSB], [LSB].
-  0x40: PWM Channel 0
-  0x41: PWM Channel 1
-  0x42: PWM Channel 2
-  0x43: PWM Channel 3
+PWMプリスケーラ（0x40-0x43）
+  PWMのプリスケーラを設定します。データは16ビット形式[MSB]、[LSB]で書き込まれます。
+  0x40：PWMチャンネル 0
+  0x41：PWMチャンネル 1
+  0x42：PWMチャンネル 2
+  0x43：PWMチャンネル 3
 
-PWM Period (0x44-0x47) 
-  Sets the period of the PWM. Data is written in 16-bit format [MSB], [LSB].
-  0x44: PWM Channel 0
-  0x45: PWM Channel 1
-  0x46: PWM Channel 2
-  0x47: PWM Channel 3
+PWM周期（0x44-0x47）
+  PWMの周期を設定します。データは16ビット形式[MSB]、[LSB]で書き込まれます。
+  0x44：PWMチャンネル 0
+  0x45：PWMチャンネル 1
+  0x46：PWMチャンネル 2
+  0x47：PWMチャンネル 3
 
-**PWM Frequency and Period Setting**
+**PWM周波数と周期設定**
 
-The PWM frequency is determined by the period (Period) and the prescaler (ARR). The principle is based on an internal clock of the microcontroller running at 72MHz. By dividing the clock with the prescaler, we obtain a frequency (Fp). Then, by dividing Fp with the period, we can calculate the desired frequency (F). Therefore:
+PWMの周波数は周期（Period）とプリスケーラ（ARR）によって決定されます。
+マイクロコントローラの内部クロックが72MHzで動作しているので、プリスケーラでクロックを分割すると、周波数（Fp）が得られます。その後、Fpを周期で割ると、目的の周波数（F）が計算できます。すなわち：
 
 F = 72000000 / ARR / Period
 
-In general, we determine the frequency and period to calculate the prescaler. For example, if you need to drive a servo motor with a frequency of 50Hz and a precision of 12 bits (period of 2^12, which is 4096), you can calculate the prescaler (ARR) as follows:
+通常、周波数と周期を決定してからプリスケーラを計算します。
+例えば、50Hzの周波数で12ビットの精度（周期は2^12、即ち4096）のサーボモーターを駆動する必要がある場合、プリスケーラ（ARR）は以下のように計算されます：
 
 ARR = 72000000 / F * Period
 = 72000000 / 50 / 4096
 = 351.6525
 ≈ 352
 
-Since ARR needs to be an integer, it will be rounded to 352. Therefore, you can set ARR as 352 and Period as 4096 to achieve an actual PWM frequency of approximately 49.937Hz, which is close to 50Hz.
+ARRは整数でなければならないため、352に四捨五入されます。したがって、ARRを352、周期を4096と設定することで、実際のPWM周波数は約49.937Hzとなり、50Hzに非常に近くなります。
 
-The default values for the PWM prescaler (ARR) and period (Period) are 352 and 4096, respectively, resulting in a default frequency of 50Hz.
+PWMのプリスケーラ（ARR）と周期（Period）のデフォルト値は、それぞれ352と4096で、デフォルトの周波数は50Hzです。
 
-**PWM Pulse Width**
+**PWMパルス幅**
 
-The pulse width corresponds to the number of periods. For example, if the period (Period) is set to 4096, 
-and you set the pulse width value to 2048, you will achieve a 50% PWM output.
+パルス幅は周期数に対応します。
+例えば、周期（Period）が4096に設定されていて、パルス幅の値を2048に設定すると、50%のPWM出力が得られます。

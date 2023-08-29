@@ -1,18 +1,19 @@
-SunFounder Robot HAT
+SunFounder ロボット HAT
 =====================================
 
-Robot HAT is a multifunctional expansion board that allows Raspberry Pi to be quickly turned into a robot. An MCU is on board to extend the PWM output and ADC input for the Raspberry Pi, as well as a motor driver chip, Bluetooth module, I2S audio module and mono speaker. As well as the GPIOs that lead out of the Raspberry Pi itself.
+ロボット HAT は、Raspberry Pi を短時間でロボットに変換できる多機能拡張ボードです。搭載されている MCU により、Raspberry Pi の PWM 出力と ADC 入力を拡張し、モータードライバチップ、Bluetooth モジュール、I2S オーディオモジュール、モノラルスピーカーも内蔵しています。さらに、Raspberry Pi 自体から引き出される GPIO も利用可能です。
 
-It also comes with a Speaker, which can be used to play background music, sound effects and implement TTS functions to make your project more interesting.
+このボードにはスピーカーも付属しており、バックグラウンドミュージックや効果音を再生するだけでなく、TTS 機能を実装してプロジェクトをより魅力的にすることができます。
 
-Accepts 7-12V PH2.0 2pin power input with 2 power indicators. The board also has a user available LED and a button for you to quickly test some effects.
+7-12V PH2.0 2ピン電源入力に対応し、2つの電源インジケーターがあります。また、効果をすぐにテストできるように、ユーザー用の LED とボタンも搭載されています。
 
-In this document, you will get a full understanding of the interface functions of the Robot HAT and the usage of these interfaces through the Python ``robot-hat`` library provided by SunFounder.
+このドキュメントでは、SunFounder が提供する Python ``robot-hat`` ライブラリを通じて、ロボット HAT のインターフェース機能とその使用方法について詳しく解説します。
 
 .. .. image:: img/robot_hat.jpg
 ..    :width: 400
 ..    :align: center
-.. wait for new pic
+.. 新しい写真待ち
+
 
 .. toctree::
    :maxdepth: 3

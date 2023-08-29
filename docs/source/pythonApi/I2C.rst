@@ -1,66 +1,67 @@
 .. _class_i2c:
 
-class ``i2c`` - IIC Bus
+class ``i2c`` - IICバス
 ===========================
 
-**Usage**
+**使用方法**
 
 .. code-block:: python
 
     from robot_hat import I2C
 
-    i2c = I2C(1)                         # create on bus 1
-    i2c = I2C(1, I2C.MASTER)             # create and init as a master
+    i2c = I2C(1)                         # バス1上で作成
+    i2c = I2C(1, I2C.MASTER)             # マスターとして作成および初期化
 
-    i2c.send('abc')      # send 3 bytes
-    i2c.send(0x42)       # send a single byte, given by the number
-    data = i2c.recv(3)   # receive 3 bytes
+    i2c.send('abc')                      # 3バイト送信
+    i2c.send(0x42)                       # 単一のバイトを数値で送信
+    data = i2c.recv(3)                   # 3バイト受信
 
-    i2c.is_ready(0x42)           # check if slave 0x42 is ready
-    i2c.scan()                   # scan for slaves on the bus, returning a list of valid addresses
-    i2c.mem_read(3, 0x42, 2)     # read 3 bytes from memory of slave 0x42, starting at address 2 in the slave
-    i2c.mem_write('abc', 0x42, 2, timeout=1000) # write 'abc' (3 bytes) to memory of slave 0x42, starting at address 2 in the slave, timeout after 1 second.
+    i2c.is_ready(0x42)                   # スレーブ0x42が準備完了かチェック
+    i2c.scan()                           # バス上のスレーブをスキャンし、有効なアドレスのリストを返す
+    i2c.mem_read(3, 0x42, 2)             # スレーブ0x42のメモリから3バイト読み取る、スレーブ内のアドレス2から開始
+    i2c.mem_write('abc', 0x42, 2, timeout=1000) # スレーブ0x42のメモリに'abc'（3バイト）を書き込む、スレーブ内のアドレス2から開始、1秒後にタイムアウト
 
-**Constructors**
+**コンストラクタ**
 
-``class robot_hat.I2C(num)``: Create an I2C object associated with the given ``num``. This allows you to use i2c on that device.
+``class robot_hat.I2C(num)``: 指定された ``num`` と関連付けられたI2Cオブジェクトを作成します。これにより、そのデバイスでI2Cを使用できます。
 
-**Methods**
+**メソッド**
 
--  ``is_ready`` - Check if slave 0x42 is ready.
+-  ``is_ready`` - スレーブ0x42が準備完了かチェックします。
 
 .. code-block:: python
 
     I2C.is_ready(addr)
 
--  ``scan`` - Scan for slaves on the bus, returning.
+-  ``scan`` - バス上のスレーブをスキャンし、リストで返します。
 
 .. code-block:: python
 
     I2C.scan()
 
--  ``send`` - Send several bytes to slave with address.
+-  ``send`` - 指定したアドレスのスレーブに複数のバイトを送信します。
 
 .. code-block:: python
 
-    I2C.send(send,addr,timeout)
+    I2C.send(send, addr, timeout)
 
--  ``recv`` - Receive one or several bytes.
+-  ``recv`` - 一つまたは複数のバイトを受信します。
 
 .. code-block:: python
 
-    data = i2c.recv(recv,addr,timeout)   # receive 3 bytes
+    data = i2c.recv(recv, addr, timeout)   # 3バイトを受信
 
--  ``mem_write`` - Write to the memory of an I2C device.
+-  ``mem_write`` - I2Cデバイスのメモリに書き込みます。
 
 .. code-block:: python
 
     I2C.mem_write(data, addr, memaddr, timeout)
 
--  ``mem_read`` - Read from the memory of an I2C device.
+-  ``mem_read`` - I2Cデバイスのメモリから読み取ります。
 
 .. code-block:: python
 
     I2C.mem_read(data, addr, memaddr, timeout)
+
 
 
