@@ -17,8 +17,7 @@ class ``Ultrasonic`` - ultrasonic ranging sensor
 
 ``class robot_hat.Ultrasonic(trig, echo)``: Create a Ultrasonic object associated with the given pin. This allows you to then read distance value.
 
-Methods
--------
+**Methods**
 
 -  ``read`` - Read distance values.
 

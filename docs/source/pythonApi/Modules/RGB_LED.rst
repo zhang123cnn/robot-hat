@@ -14,8 +14,7 @@ class ``RGB_LED`` - rgb LED
     rgb = RGB_LED(r, g, b)                       # Create a RGB_LED object
     val = rgb.write('#FFFFFF')                   # Write in the color in hexadecimal.
 
-Constructors
-------------
+**Constructors**
 
 ``class robot_hat.RGB_LED(Rpin, Gpin, Bpin)``: Create a ``RGB_LED`` object associated with the given pin. This allows you set the color of RGB LED. 
 Input ``Rpin``, ``Gpin``, ``Bpin`` must be ``PWM`` object from ``robot_hat.PWM``.

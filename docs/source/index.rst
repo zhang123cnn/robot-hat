@@ -14,6 +14,18 @@ In this document, you will get a full understanding of the interface functions o
 ..    :align: center
 .. wait for new pic
 
+**About the display language**
+
+This document is available in other languages as well. To switch the display language, kindly click on the **Read the Docs** icon located in the lower left corner of the page.
+
+.. image:: img/translation.png
+       :align: center
+
+.. raw:: html
+
+   <br/>
+
+
 .. toctree::
    :maxdepth: 3
 
