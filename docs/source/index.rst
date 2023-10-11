@@ -1,5 +1,17 @@
-SunFounder ロボット HAT
+SunFounder Robot HAT
 =====================================
+
+SunFounder Robot HATをお選びいただき、ありがとうございます。
+
+.. note::
+    このドキュメントは以下の言語で利用可能です。
+
+        * |link_german_tutorials|
+        * |link_jp_tutorials|
+        * |link_en_tutorials|
+
+    ご希望の言語でドキュメントにアクセスするために、それぞれのリンクをクリックしてください。
+
 
 ロボット HAT は、Raspberry Pi を短時間でロボットに変換できる多機能拡張ボードです。搭載されている MCU により、Raspberry Pi の PWM 出力と ADC 入力を拡張し、モータードライバチップ、Bluetooth モジュール、I2S オーディオモジュール、モノラルスピーカーも内蔵しています。さらに、Raspberry Pi 自体から引き出される GPIO も利用可能です。
 
