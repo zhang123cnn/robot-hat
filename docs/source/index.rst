@@ -1,6 +1,17 @@
 SunFounder Robot HAT
 =====================================
 
+Danke, dass Sie sich für unser Robot HAT entschieden haben.
+
+.. note::
+    Dieses Dokument ist in den folgenden Sprachen verfügbar.
+
+        * |link_german_tutorials|
+        * |link_jp_tutorials|
+        * |link_en_tutorials|
+    
+    Bitte klicken Sie auf die jeweiligen Links, um das Dokument in Ihrer bevorzugten Sprache aufzurufen.
+
 Der Robot HAT ist eine multifunktionale Erweiterungsplatine, die es ermöglicht, einen Raspberry Pi schnell in einen Roboter zu verwandeln. Ein MCU ist auf der Platine integriert, um die PWM-Ausgabe und ADC-Eingänge des Raspberry Pi zu erweitern. Zudem sind ein Motortreiber-Chip, ein Bluetooth-Modul, ein I2S-Audiomodul und ein Monolautsprecher vorhanden. Hinzu kommen die vom Raspberry Pi selbst ausgeführten GPIOs.
 
 Zusätzlich ist ein Lautsprecher im Lieferumfang enthalten, der zur Wiedergabe von Hintergrundmusik, Soundeffekten und zur Implementierung von TTS-Funktionen verwendet werden kann, um Ihr Projekt interessanter zu gestalten.
