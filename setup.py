@@ -90,6 +90,7 @@ setup(
     },
 )
 
+exit(0)
 
 def run_command(cmd=""):
     import subprocess
